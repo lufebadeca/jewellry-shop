@@ -76,9 +76,7 @@ a:hover{
 .banner {
   grid-area: banner;
   width: auto;
-  margin-left: auto;
-  margin-right: auto;
-  
+  margin: 18px auto 10px auto;  
 }
 
 .banner img{
@@ -131,7 +129,7 @@ a:hover{
 #new::after{
   content: " new!";
   color: rgb(250, 237, 0);
-  box-shadow: 1px 1px 3px rgb(54, 47, 255);
+  box-shadow: 1px 1px 3px rgb(227, 228, 193);
   background-color: rgb(226, 91, 14);
 }
 
