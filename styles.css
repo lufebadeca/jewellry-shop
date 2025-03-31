@@ -1,5 +1,8 @@
 *{
-  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño total */
+  font-family: Arial, sans-serif;
 }
 
 body{
@@ -85,11 +88,15 @@ a:hover{
 }
 
 .article{
-  background-color: #e4b070;
+  background-color: #eccca4;
   padding: 45px 30px 25px 30px;
   border-radius: 38px;
   max-width: 100%; /* Evita que el artículo se desborde */
-  box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño total */
+  transition: transform 0.3s;
+}
+
+.article:hover{
+  transform: translate(-4px);
 }
 
 .article img{
