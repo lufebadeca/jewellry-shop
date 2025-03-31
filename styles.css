@@ -4,15 +4,12 @@
 
 body{
   margin: 0;
+  padding: 45px;
   background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-}
-
-h1{
-  text-align: center;
 }
 
 .header{
@@ -64,130 +61,67 @@ a:hover{
 
 .main{
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: 2fr auto 1fr 0.7fr;
-  grid-template-areas: "carousel carousel" 
-                        "location blog"
-                      "about about"
-                      "contact contact";
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "banner banner banner" 
+                        "article1 article2 article3";
+                    
 }
 
-.carousel-container {
-  grid-area: carousel;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+.banner {
+  grid-area: banner;
   width: auto;
   margin-left: auto;
   margin-right: auto;
   
 }
 
-.carousel-container img{
-  width: 400px;
-  height: 400px;
-  flex: 0 0 auto; /* Evita que las imágenes colapsen */
-  scroll-snap-align: center; /* Centra la imagen en cada desplazamiento */
-  border-radius: 10px;
+.banner img{
+  width: 100%;
   object-fit: cover; /* Ajusta la imagen sin distorsión */
   margin: auto auto;
   box-shadow: 0px 0px 10px gold;
 }
 
-.location{
-  grid-area: location;
+.article{
+  background-color: #e4b070;
+  padding: 45px 30px 25px 30px;
+  border-radius: 38px;
+  max-width: 100%; /* Evita que el artículo se desborde */
+  box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño total */
 }
 
-.location article{
-  margin: auto auto;
+.article img{
+  border-radius: 25px;
+  transition: transform 300ms ease-in-out;
+  width: 100%; /* Ajusta el tamaño al 100% del contenedor */
+  height: 60%;    /* Mantiene la proporción de la imagen */
+  object-fit: cover;
 }
 
-.blog{
-  grid-area: blog;
+.article img:hover{
+  transform: scale(1.1);
+  transition: transform 700ms ease-in;
 }
 
-.blog article{
-  text-align: center;
-  border-style: 1px solid white;
+.article iframe{
+  border-radius: 25px;
+  transition: transform 300ms ease-in-out;
+  width: 100%; /* Ajusta el tamaño al 100% del contenedor */
+  height: 60%;    /* Mantiene la proporción de la imagen */
+}
+
+.article iframe:hover{
+  transform: scale(1.1);
+  transition: transform 700ms ease-in;
 }
 
 #new::after{
   content: " new!";
-  color: gold;
-  box-shadow: 1px 1px 3px greenyellow;
-}
-
-.about{
-  grid-area: about;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-areas: "h1 h1" 
-                        "article figure";
-}
-
-.about h1{
-  grid-area: h1;
-  margin: 40px;
-}
-.about article{
-  grid-area: article;
-  text-align: justify;
-}
-
-.about figure{
-  grid-area: figure;
-  text-align: justify;
-  transition: transform 180ms ease-in;
-}
-.about figure:hover{
-  transform: scale(1.8) translateX(-60px) translateY(-20px);
-  transition: transform 900ms ease-in;
-}
-
-
-.contact{
-  margin: auto;
-  grid-area: contact;
-}
-
-.form{
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(169, 169, 143);
-  border-radius: 22px;
-  padding: 35px 25px 25px 25px;
-  align-items: center;
-  width: 450px;
-  gap: 40px;
-  box-shadow: 2px 2px 10px #998d7e;
-}
-
-.form button{
-  width: 120px;
-  height: 33px;
-  color:black;
-  border-radius: 8px;
-  color: white;
-  font-weight: 600;
-  border-style: 2px solid white;
-  background-color: #e4b070;
-}
-
-.form button:hover{
-  transform: translateY(1px);
-  cursor: pointer;
-}
-
-.input-group{
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-}
-.input-group label{
-  width: 120px;
-}
-.input-group input{
-  color: black;
+  color: rgb(250, 237, 0);
+  box-shadow: 1px 1px 3px rgb(54, 47, 255);
+  background-color: rgb(226, 91, 14);
 }
 
 .footer {
